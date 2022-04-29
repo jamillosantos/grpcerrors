@@ -1,0 +1,95 @@
+name: Go
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Go 1.16
+        uses: actions/setup-go@v2
+        with:
+          go-version: ^1.16
+
+      - name: Check out code into the Go module directory
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: true
+
+      - name: Granting private modules access
+        env:
+          USER: ${{secrets.PRIVATE_GITHUB_USER}}
+          TOKEN: ${{secrets.PRIVATE_GITHUB_TOKEN}}
+        run: |
+          git config --global url."https://${USER}:${TOKEN}@github.com/seedoshop/".insteadOf "https://github.com/seedoshop/"
+
+      - name: Get dependencies
+        run: |
+          go mod download
+
+      - uses: setare/go-lint-action@v0.1.2
+
+  security:
+    name: Security checks
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Go 1.16
+        uses: actions/setup-go@v2
+        with:
+          go-version: ^1.16
+        id: go
+
+      - name: Check out code into the Go module directory
+        uses: actions/checkout@v2
+
+      - name: Granting private modules access
+        env:
+          USER: ${{secrets.PRIVATE_GITHUB_USER}}
+          TOKEN: ${{secrets.PRIVATE_GITHUB_TOKEN}}
+        run: |
+          git config --global url."https://${USER}:${TOKEN}@github.com/seedoshop/".insteadOf "https://github.com/seedoshop/"
+
+      - name: Get dependencies
+        env:
+          GOPRIVATE: github.com/setare
+        run: |
+          go mod download
+
+      - uses: setare/go-gosec-action@v0.1.0
+
+  unit-tests:
+    name: Unit tests
+    runs-on: ubuntu-latest
+    needs:
+      - lint
+      - security
+    steps:
+      - name: Set up Go 1.16
+        uses: actions/setup-go@v2
+        with:
+          go-version: ^1.16
+        id: go
+
+      - name: Check out code into the Go module directory
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: true
+
+      - name: Granting private modules access
+        env:
+          USER: ${{secrets.PRIVATE_GITHUB_USER}}
+          TOKEN: ${{secrets.PRIVATE_GITHUB_TOKEN}}
+        run: |
+          git config --global url."https://${USER}:${TOKEN}@github.com/seedoshop/".insteadOf "https://github.com/seedoshop/"
+
+      - name: Get dependencies
+        run: |
+          go mod download
+
+      - name: Unit tests
+        run: |
+          go test -race -covermode=atomic -coverprofile=coverage.out
