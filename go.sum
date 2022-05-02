@@ -432,8 +432,8 @@ github.com/imdario/mergo v0.3.4/go.mod h1:2EnlNZ0deacrJVfApfmtdGgDfMuh/nq6Ok1EcJ
 github.com/imdario/mergo v0.3.8/go.mod h1:2EnlNZ0deacrJVfApfmtdGgDfMuh/nq6Ok1EcJh5FfA=
 github.com/inconshreveable/mousetrap v1.0.0 h1:Z8tu5sraLXCXIcARxBp/8cbvlwVa7Z1NHg9XEKhtSvM=
 github.com/inconshreveable/mousetrap v1.0.0/go.mod h1:PxqpIevigyE2G7u3NXJIT2ANytuPF1OarO4DADm73n8=
-github.com/jamillosantos/errors v0.1.0 h1:jndVo6suC78UqFjX9Uim/UKfxXNCDSCNOuQAid6o6BM=
-github.com/jamillosantos/errors v0.1.0/go.mod h1:Q5mhWUakNmiWLUbMcv+gAxdulcQNUeVpKisPG19uEKI=
+github.com/jamillosantos/errors v0.2.0 h1:OPsiOMLSRZU6SJJM520XgrG7Y7cdFO6GcljsNzEPXvI=
+github.com/jamillosantos/errors v0.2.0/go.mod h1:Q5mhWUakNmiWLUbMcv+gAxdulcQNUeVpKisPG19uEKI=
 github.com/jgautheron/goconst v1.5.1 h1:HxVbL1MhydKs8R8n/HE5NPvzfaYmQJA3o879lE4+WcM=
 github.com/jgautheron/goconst v1.5.1/go.mod h1:aAosetZ5zaeC/2EfMeRswtxUFBpe2Hr7HzkgX4fanO4=
 github.com/jhump/protoreflect v1.6.1/go.mod h1:RZQ/lnuN+zqeRVpQigTwO6o0AJUkxbnSnpuG7toUTG4=

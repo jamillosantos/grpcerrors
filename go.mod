@@ -5,7 +5,7 @@ go 1.17
 require (
 	github.com/golang/protobuf v1.5.2
 	github.com/golangci/golangci-lint v1.44.0
-	github.com/jamillosantos/errors v0.1.0
+	github.com/jamillosantos/errors v0.2.0
 	github.com/magiconair/properties v1.8.5
 	github.com/securego/gosec/v2 v2.9.6
 	github.com/stretchr/testify v1.7.1
