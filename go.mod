@@ -10,7 +10,7 @@ require (
 	github.com/securego/gosec/v2 v2.9.6
 	github.com/stretchr/testify v1.7.1
 	google.golang.org/genproto v0.0.0-20211208223120-3a66f561d7aa
-	google.golang.org/grpc v1.44.0
+	google.golang.org/grpc v1.47.0
 )
 
 require (
