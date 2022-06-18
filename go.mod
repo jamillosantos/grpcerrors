@@ -6,7 +6,7 @@ require (
 	github.com/golang/protobuf v1.5.2
 	github.com/golangci/golangci-lint v1.44.0
 	github.com/jamillosantos/errors v0.2.0
-	github.com/magiconair/properties v1.8.5
+	github.com/magiconair/properties v1.8.6
 	github.com/securego/gosec/v2 v2.9.6
 	github.com/stretchr/testify v1.7.1
 	google.golang.org/genproto v0.0.0-20220617124728-180714bec0ad
