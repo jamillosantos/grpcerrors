@@ -5,12 +5,12 @@ go 1.17
 require (
 	github.com/golang/protobuf v1.5.2
 	github.com/golangci/golangci-lint v1.44.0
-	github.com/jamillosantos/errors v0.1.0
+	github.com/jamillosantos/errors v0.2.0
 	github.com/magiconair/properties v1.8.5
 	github.com/securego/gosec/v2 v2.9.6
 	github.com/stretchr/testify v1.7.1
-	google.golang.org/genproto v0.0.0-20211208223120-3a66f561d7aa
-	google.golang.org/grpc v1.44.0
+	google.golang.org/genproto v0.0.0-20220617124728-180714bec0ad
+	google.golang.org/grpc v1.47.0
 )
 
 require (
@@ -148,12 +148,12 @@ require (
 	github.com/yeya24/promlinter v0.1.1-0.20210918184747-d757024714a1 // indirect
 	gitlab.com/bosi/decorder v0.2.1 // indirect
 	golang.org/x/mod v0.5.1 // indirect
-	golang.org/x/net v0.0.0-20211112202133-69e39bad7dc2 // indirect
-	golang.org/x/sys v0.0.0-20211216021012-1d35b9e2eb4e // indirect
+	golang.org/x/net v0.0.0-20220617184016-355a448f1bc9 // indirect
+	golang.org/x/sys v0.0.0-20220615213510-4f61da869c0c // indirect
 	golang.org/x/text v0.3.7 // indirect
 	golang.org/x/tools v0.1.9-0.20211228192929-ee1ca4ffc4da // indirect
 	golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1 // indirect
-	google.golang.org/protobuf v1.27.1 // indirect
+	google.golang.org/protobuf v1.28.0 // indirect
 	gopkg.in/ini.v1 v1.66.2 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b // indirect
