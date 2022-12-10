@@ -10,13 +10,13 @@ jobs:
     name: Lint
     runs-on: ubuntu-latest
     steps:
-      - name: Set up Go 1.16
-        uses: actions/setup-go@v2
+      - name: Set up Go 1.19
+        uses: actions/setup-go@v3
         with:
-          go-version: ^1.16
+          go-version: ^1.19
 
       - name: Check out code into the Go module directory
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           persist-credentials: true
 
@@ -37,14 +37,14 @@ jobs:
     name: Security checks
     runs-on: ubuntu-latest
     steps:
-      - name: Set up Go 1.16
-        uses: actions/setup-go@v2
+      - name: Set up Go 1.19
+        uses: actions/setup-go@v3
         with:
-          go-version: ^1.16
+          go-version: ^1.19
         id: go
 
       - name: Check out code into the Go module directory
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Granting private modules access
         env:
@@ -59,7 +59,7 @@ jobs:
         run: |
           go mod download
 
-      - uses: setare/go-gosec-action@v0.1.0
+      - uses: setare/go-gosec-action@v0.2.2
 
   unit-tests:
     name: Unit tests
@@ -68,14 +68,14 @@ jobs:
       - lint
       - security
     steps:
-      - name: Set up Go 1.16
-        uses: actions/setup-go@v2
+      - name: Set up Go 1.19
+        uses: actions/setup-go@v3
         with:
-          go-version: ^1.16
+          go-version: ^1.19
         id: go
 
       - name: Check out code into the Go module directory
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           persist-credentials: true
 

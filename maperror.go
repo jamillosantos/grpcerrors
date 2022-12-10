@@ -51,9 +51,9 @@ func MapErrorToStatus(originalError error) (*status.Status, error) {
 		}
 
 		if detailsGetter, ok := err.(interface {
-			GetDetails() []interface{}
+			Details() []interface{}
 		}); !messageSet && ok {
-			ds := detailsGetter.GetDetails()
+			ds := detailsGetter.Details()
 			for _, d := range ds {
 				// When we get a error detail that can set the code of the status.Status
 				if dd, ok := d.(grpcCoder); !codeSet && ok {
@@ -101,11 +101,11 @@ func detailsToProto(details []interface{}) []proto.Message {
 			}
 		case jerrdetails.FieldViolations:
 			r = append(r, fieldValidationsToProto(&d))
-		case *jerrdetails.FieldViolations:
+		case *jerrdetails.FieldViolations: // nolint
 			r = append(r, fieldValidationsToProto(d))
 		case jerrdetails.Reason:
 			r = append(r, reasonToProto(&d))
-		case *jerrdetails.Reason:
+		case *jerrdetails.Reason: // nolint
 			r = append(r, reasonToProto(d))
 		}
 	}
